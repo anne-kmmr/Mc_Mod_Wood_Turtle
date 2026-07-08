@@ -5,3 +5,4 @@
 -- wiederholungen? zeitlich möglich? api?
 -- auftanken immer spieler oder auch automatisch?
 
+-- vorraussetzungen einholen
