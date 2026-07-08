@@ -30,7 +30,6 @@ while round <= 3 do
             turtle.turnLeft()
         end
     end
-
     round = round + 1
 end
 
