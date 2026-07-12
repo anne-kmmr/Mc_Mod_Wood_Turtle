@@ -1,5 +1,5 @@
-local breite = 10
-local reihen = 10
+local width = 10
+local rows = 10
 
 local wood = {
     ["minecraft:oak_log"] = true,
@@ -84,12 +84,12 @@ function changeRow(direction)
 
 end
 
-for row = 1,reihen do
-    for x = 1,breite-1 do
+for row = 1,rows do
+    for x = 1,width -1 do
         moveForward()
     end
 
-    if row < reihen then
+    if row < rows then
         if row % 2 == 1 then
             changeRow("left")
 
