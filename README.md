@@ -4,6 +4,8 @@ Automatisierte Holzfarm-Turtle für **Minecraft mit CC:Tweaked**.
 
 Dieses Projekt enthält ein Lua-Programm für eine Turtle, die automatisch eine definierte Farm abfährt, Holz abbaut, Ressourcen sammelt und diese anschließend an einer Sammelstation abgibt.
 
+Die Turtle arbeitet am besten mit kleinen bis mittelgroßen Bäumen, wie z.B. Oak oder Spruce. Mehr hierzu unter "Benutzungshinweise".
+
 
 ---
 
@@ -21,31 +23,35 @@ Dieses Projekt enthält ein Lua-Programm für eine Turtle, die automatisch eine 
 
 # 📦 Voraussetzungen
 
-## Minecraft
-
 Benötigt:
 
 * Minecraft Java Edition
 * CC:Tweaked
+* CurseForge
 
 Empfohlene Version:
 
 ```
 Minecraft 1.20+
 CC:Tweaked 1.100+
+CurseForge (aktuellste Version)
 ```
 
 ---
 
 # 🛠 Installation
 
-## 1. CC:Tweaked installieren
+## 1. CurseForge installieren
+
+---
+
+## 2. CC:Tweaked installieren
 
 
 
 ---
 
-## 2. Turtle vorbereiten
+## 3. Turtle vorbereiten
 
 
 
@@ -68,7 +74,7 @@ Wichtig:
 
 * Das Feld muss frei befahrbar sein
 * Zäune oder Begrenzungen müssen korrekt gesetzt sein
-* Der Hopper muss dort stehen, wo die Turtle ihre Items abgibt
+* Der Hopper und die Kisten müssen dort stehen, wo die Turtle ihre Items abgibt bzw. startet
 
 ---
 
@@ -85,7 +91,6 @@ local rows = 10
 Die Turtle fährt 10 Reihen ab. Diese Zahl kann verändert werden, sollte jedoch min. 2 oder eine gerade
 Zahl sein, sodass das Serpentinen-Fahrmuster auf der Farm anwendbar ist.
 
----
 
 
 
