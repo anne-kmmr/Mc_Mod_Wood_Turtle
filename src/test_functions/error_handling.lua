@@ -60,8 +60,10 @@ function takeSaplings()
             return true
         end
     end
+
     return false
 end
+
 
 function checkFuel()
     if turtle.getFuelLevel() == "unlimited" then
@@ -74,11 +76,13 @@ function checkFuel()
 
     for i = 1,16 do
         turtle.select(i)
+
         if turtle.refuel(0) then
             turtle.refuel()
             break
         end
     end
+
     return turtle.getFuelLevel() > 50 and takeSaplings()
 end
 
@@ -201,6 +205,7 @@ function getHome()
             end
         end
     end
+
     turtle.forward()
     turtle.turnRight()
 end

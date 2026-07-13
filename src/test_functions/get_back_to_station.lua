@@ -35,54 +35,31 @@ local fence = {
     ["minecraft:cherry_fence"] = true
 }
 
-function checkSaplings()
-    for slot = 1, 16 do
-        local item = turtle.getItemDetail(slot)
+function checkFuel()
 
-        if item then
-            for _, saplingName in pairs(sapling) do
-                if item.name == saplingName then
-                    return true
-                end
-            end
-        end
-    end
-    return false
-end
-
-function takeSaplings()
-    if checkSaplings() then
+    if turtle.getFuelLevel() == "unlimited" then
         return true
     end
 
-    while turtle.suckDown() do
-        if checkSaplings() then
+    if turtle.getFuelLevel() > 50 then
+        return true
+    end
+
+
+    for i = 1,16 do
+        turtle.select(i)
+
+        if turtle.refuel(0) then
+            turtle.refuel()
             return true
         end
+
     end
     return false
 end
 
-function checkFuel()
-    if turtle.getFuelLevel() == "unlimited" then
-        return takeSaplings()
-    end
-
-    if turtle.getFuelLevel() > 50 then
-        return takeSaplings()
-    end
-
-    for i = 1,16 do
-        turtle.select(i)
-        if turtle.refuel(0) then
-            turtle.refuel()
-            break
-        end
-    end
-    return turtle.getFuelLevel() > 50 and takeSaplings()
-end
-
 function cutSideBranches()
+
     for i = 1,4 do
         local found, block = turtle.inspect()
 
@@ -94,8 +71,8 @@ function cutSideBranches()
 end
 
 function plantSapling(blockName)
-    local wanted = sapling[blockName]
 
+    local wanted = sapling[blockName]
     if wanted then
         for slot = 1,16 do
             local item = turtle.getItemDetail(slot)
@@ -107,11 +84,6 @@ function plantSapling(blockName)
             end
         end
     end
-end
-
-function turnAround()
-    turtle.turnRight()
-    turtle.turnRight()
 end
 
 function moveAndHarvest()
@@ -151,10 +123,7 @@ function moveAndHarvest()
                 turtle.down()
             end
 
-            turtle.forward()
-            turnAround()
             plantSapling(name)
-            turnAround()
 
         else
             turtle.dig()
@@ -167,43 +136,33 @@ function changeRow(side)
         turtle.turnLeft()
         turtle.forward()
         turtle.turnLeft()
-
     else
+
         turtle.turnRight()
         turtle.forward()
         turtle.turnRight()
+
     end
 end
 
 function getHome()
     turtle.turnRight()
 
-    for i = 1, rows - 2 do
+    for i = 1, rows - 2, 1 do
         turtle.forward()
     end
 
-    for slot = 1, 16 do
-        local item = turtle.getItemDetail(slot)
-
-        if item then
-            local isSapling = false
-
-            for _, saplingName in pairs(sapling) do
-                if item.name == saplingName then
-                    isSapling = true
-                    break
-                end
-            end
-
-            if not isSapling then
-                turtle.select(slot)
-                turtle.dropDown()
-            end
-        end
+    for i = 1,16 do
+        turtle.select(i)
+        turtle.dropDown()
     end
+
     turtle.forward()
     turtle.turnRight()
 end
+
+
+-- Main
 
 direction = "right"
 local row = 0
