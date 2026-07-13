@@ -32,34 +32,40 @@ Benötigt:
 Empfohlene Version:
 
 ```
-Minecraft 1.20+
+Minecraft 1.20.1
 CC:Tweaked 1.100+
-CurseForge (aktuellste Version)
 ```
 
 ---
 
-# 🛠 Installation
+# 🛠 Installation & Benutzung
 
-## 1. CurseForge installieren
+### Modpack installieren
+1. Installiere CurseForge: https://www.curseforge.com/download/app
+2. Füge Minecraft ggf. als Spiel in der linken Leiste hinzu
+3. Wähle dann "My Modpacks" und "Create"
+4. Vergib einen Namen, wähle eine entsprechende Minecraft-Version und den Modloader "Forge" aus
+5. Klicke auf "Create" und wähle das Modpack aus
+6. "Add Content", suche nach "CC:Tweaked" und installiere es
 
----
+### Minecraft starten
+7. Starte das Modpack über den Button "Play" und erstelle eine Welt
+8. Suche im Inventar nach "Turtle" und wähle eine Mining- oder Felling-Turtle aus
+   9. Vorerst sollte nur eine Turtle platziert werden, später können weitere hinzukommen
 
-## 2. CC:Tweaked installieren
+### Script herunterladen & einbinden
+10. Gehe auf https://github.com/anne-kmmr/Mc_Mod_Wood_Turtle, wähle "src" und anschließend "wood_turtle.lua" aus
+11. Lade die Datei über das entsprechende Icon oben rechts herunter
+12. Gehe zurück in CurseForge, klicke das Pack an, wähle die drei Punkte neben "Play" aus und klicke "Open Folder" an
+13. Im Ordnerverzeichnis rufe nun saves/{Name_der_Welt}/computercraft/computer auf und wähle "1" aus
+    14. "1" steht für die Turtle mit der ID 1, solltest du mehrere platziert haben, wähle den richtigen Ordner mittels ID-Abfrage aus
+15. Füge das Script in den Ordner ein, behalte den Namen dabei bei
 
+### Script starten
+16. Wechsle in das Spiel, Rechtsklick auf die Turtle und gibt "wood_turtle" ein
+17. Die Turtle fährt über die Farm und kann nach dem Durchlauf neugestartet werden
 
-
----
-
-## 3. Turtle vorbereiten
-
-
-
----
-
-## 3. Script herunterladen & installieren
-
-
+Siehe "Weitere Bilder"
 
 ---
 
@@ -67,14 +73,26 @@ CurseForge (aktuellste Version)
 
 Die Farm sollte im besten Fall so aufgebaut sein:
 
-Fehlendes Bild!
-
+![Aufbau der Farm](images/Farm_Layout.png)
 
 Wichtig:
 
 * Das Feld muss frei befahrbar sein
 * Zäune oder Begrenzungen müssen korrekt gesetzt sein
 * Der Hopper und die Kisten müssen dort stehen, wo die Turtle ihre Items abgibt bzw. startet
+
+Weitere Bilder siehe unter 
+
+---
+
+## Ablauf
+
+1. Turtle startet an der Station nach Ausführung des Scripts
+3. Fährt Reihe für Reihe ab und wendet am Ende jeder Reihe
+    4. Sammelt Holz, bewegt sich (bei Bedarf) nach oben/unten und sammelt Holz am Stamm im Radius von einem Block
+5. Fährt zurück zur Station
+6. Gibt Items über den Hopper an Kiste ab
+7. Färt auf Station, dreht sich und wartet auf ein erneutes Ausführen
 
 ---
 
@@ -113,31 +131,9 @@ Durch "false" statt "true" kann das Sammeln von bestimmten Holzarten ausgeschlos
 
 ---
 
-# ▶ Benutzung
 
-## Script ausführen
 
-Rechtsklick auf die Turtle und folgenden Befehl eintippen/ausführen:
 
-```
-wood_turtle
-```
-
-Die Turtle beginnt anschließend automatisch mit dem Farmen. Nach Beendung des Durchlaufs wartet sie auf
-einen erneuten Start.
-
----
-
-## Ablauf
-
-1. Turtle startet an der Station nach Ausführung des Scripts
-3. Fährt Reihe für Reihe ab und wendet am Ende jeder Reihe
-   4. Sammelt Holz, bewegt sich (bei Bedarf) nach oben/unten und sammelt Holz am Stamm im Radius von einem Block
-5. Fährt zurück zur Station
-6. Gibt Items über den Hopper an Kiste ab
-7. Färt auf Station, dreht sich und wartet auf ein erneutes Ausführen
-
----
 
 # ⚠️ Benutzungshinweise
 
@@ -154,6 +150,32 @@ werden.
 ## Ausrichtung der Bäume
 Die Bäume dürfen nicht direkt am Zaun oder im Drehradius der Turtle stehen, da diese sonst möglicherweise 
 nur den untersten Block abbaut oder sich verwirrt im Kreis dreht und in eine falsche Richtung fährt.
+
+---
+
+# Weitere Bilder
+
+![Station von hinten](images/Station_back.png)
+
+![Station von vorne](images/Station_front.png)
+
+![Saplings und Kohle](images/Turtle_Start_Chest.png)
+
+![Ausführung Script](images/Script_Execution.png)
+
+![Holz ernten](images/Turtle_farming.png)
+
+![Überliegendes Holz ernten](images/Turtle_farming_above.png)
+
+![Im Baum ernten](images/Turtle_farming_in_tree.png)
+
+![Neue Bäume pflanzen](images/Turtle_replanting.png)
+
+![Abgabe des Holzes](images/Turtle_on_Hopper.png)
+
+![Gefälltes Holz](images/Farming_Chest.png)
+
+![Warten auf erneuten Durchlauf](images/Farm_Proccess.png)
 
 
 
@@ -175,3 +197,4 @@ Dieses Projekt steht unter der MIT-Lizenz.
 # 👤 Autor
 
 **anne-kmmr** (https://github.com/anne-kmmr)
+
